@@ -1,0 +1,6 @@
+Don’t use float or double where exact answers are required; for monetary calculations
+
+You may use BigDecimal, but when using BigDecimal:
+- Don’t use BigDecimal(double) constructor
+- Use the BigDecimal(String) constructor
+- Or Use the BigDecimal.valueOf(double) factory method

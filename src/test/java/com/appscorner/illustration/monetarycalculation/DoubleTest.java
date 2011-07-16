@@ -20,8 +20,8 @@ public class DoubleTest {
     @Test
     public void testDoubleCalculations() {
 
-        double two = 2.00;
-        double dotOne = 1.10;
+        double two = 2.00d;
+        double dotOne = 1.10d;
         double result = two - dotOne;
 
         System.out.println("Given:");

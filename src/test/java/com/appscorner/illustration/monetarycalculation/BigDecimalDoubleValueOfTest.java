@@ -17,7 +17,7 @@ public class BigDecimalDoubleValueOfTest {
 
     @Test
     public void testBigDecimalOffOfDoubleWithValueOf() {
-        String actual = BigDecimal.valueOf(1.1).toString();
+        String actual = BigDecimal.valueOf(1.1d).toString();
         System.out.println("BigDecimal Off Of Double With valueOf: " + actual);
         assertEquals(MoneyCalculationTest.message, "1.1", actual);
     }

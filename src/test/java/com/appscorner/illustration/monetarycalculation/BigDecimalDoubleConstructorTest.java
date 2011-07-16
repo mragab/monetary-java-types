@@ -17,7 +17,7 @@ public class BigDecimalDoubleConstructorTest {
 
     @Test
     public void testBigDecimalOffOfDoubleWithNew() {
-        String actual = new BigDecimal(1.1).toString();
+        String actual = new BigDecimal(1.1d).toString();
         System.out.println("BigDecimal Off Of Double With New: " + actual);
         assertEquals(MoneyCalculationTest.message, "1.1", actual);
     }

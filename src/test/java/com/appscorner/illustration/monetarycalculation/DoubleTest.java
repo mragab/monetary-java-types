@@ -18,29 +18,52 @@ public class DoubleTest {
             + " finite length binary fraction [Java Puzzlers, page 8]";
 
     @Test
-    public void testDoubleCalculations() {
+    public void testDoubleValueOfOneDotOne() {
+        String actual = Double.valueOf(1.1d).toString();
+        System.out.println(">> Double.valueOf(1.1d) = " + actual);
+        assertEquals(MoneyCalculationTest.message, "1.1", actual);
+    }
+
+    @Test
+    public void testDoubleValueOfDotNine() {
+        String actual = Double.valueOf(0.9d).toString();
+        System.out.println(">> Double.valueOf(0.9d) = " + actual);
+        assertEquals(MoneyCalculationTest.message, "0.9", actual);
+    }
+
+    @Test
+    public void testNewDoubleOneDotOne() {
+        String actual = new Double(1.1d).toString();
+        System.out.println(">> new Double(1.1d) = " + actual);
+        assertEquals(MoneyCalculationTest.message, "1.1", actual);
+    }
+
+    @Test
+    public void testNewDoubleDotNine() {
+        String actual = new Double(0.9d).toString();
+        System.out.println(">> new Double(0.9d) = " + actual);
+        assertEquals(MoneyCalculationTest.message, "0.9", actual);
+    }
+
+    @Test
+    public void testSubtractDouble() {
 
         double two = 2.00d;
-        double dotOne = 1.10d;
-        double result = two - dotOne;
+        double oneDotOne = 1.10d;
+        double result = two - oneDotOne;
 
-        System.out.println("Given:");
-        System.out.println("two=" + two);
-        System.out.println("dotOne=" + dotOne);
+        System.out.println(">> Given:");
+        System.out.println("    two (2.0d) = " + two);
+        System.out.println("    dotOne (1.1d) = " + oneDotOne);
 
-        System.out.println("");
-        System.out.println("What is the result of: 2.00 - 0.10 ");
+        System.out.print(">> The result of: 2.00 - 1.10 = ");
 
-        System.out.print("inline calculated result = ");
-        System.out.println(two - dotOne);
-
-        System.out.print("precalculated result = ");
         System.out.println(result);
 
         String stringResult = Double.valueOf(result).toString();
-        System.out.println("Result converted to a String = " + stringResult);
+        System.out.println(">> Result converted to a String = " + stringResult);
 
-        String expected = "1.9";
+        String expected = "0.9";
         String actual = stringResult;
 
         assertEquals(message, expected, actual);

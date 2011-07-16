@@ -16,39 +16,35 @@ import org.junit.Test;
 public class BigDecimalDoubleValueOfTest {
 
     @Test
-    public void testBigDecimalOffOfDoubleWithValueOf() {
+    public void testBigDecimalOffOfDoubleWithValueOfFactoryMethod() {
         String actual = BigDecimal.valueOf(1.1d).toString();
-        System.out.println("BigDecimal Off Of Double With valueOf: " + actual);
+        System.out.println(">> BigDecimal.valueOf(1.1d) = " + actual);
         assertEquals(MoneyCalculationTest.message, "1.1", actual);
     }
 
-    @Test
-    public void testSubtractBigDecimalOffOfDoubleWithValueOf() {
+    @Test()
+    public void testSubtractBigDecimalOffOfDoubleValueOfFactoryMethod() {
 
-        double two = 2.00;
+        double two = 2.00d;
         BigDecimal twoBigDecimal = BigDecimal.valueOf(two);
-        double dotOne = 0.10;
-        BigDecimal dotOneBigDecimal = BigDecimal.valueOf(dotOne);
+
+        double oneDotOne = 1.10d;
+        BigDecimal dotOneBigDecimal = BigDecimal.valueOf(oneDotOne);
 
         BigDecimal resultBigDecimal = twoBigDecimal.subtract(dotOneBigDecimal);
 
-        System.out.println("Given:");
-        System.out.println("two=" + twoBigDecimal);
-        System.out.println("oneDotOne=" + dotOneBigDecimal);
+        System.out.println(">> Given:");
+        System.out.println("    two (2.0d) = " + twoBigDecimal);
+        System.out.println("    oneDotOne (1.1d) = " + dotOneBigDecimal);
 
-        System.out.println("");
-        System.out.println("What is the result of: 2.00 - 0.10 ");
+        System.out.print(">> The result of: 2.00 - 1.10 = ");
 
-        System.out.print("inline calculated result = ");
-        System.out.println(twoBigDecimal.subtract(dotOneBigDecimal));
-
-        System.out.print("precalculated result = ");
         System.out.println(resultBigDecimal);
 
         String stringResult = resultBigDecimal.toString();
-        System.out.println("Result converted to a String = " + stringResult);
+        System.out.println(">> Result converted to a String = " + stringResult);
 
-        String expected = "1.9";
+        String expected = "0.9";
         String actual = stringResult;
 
         assertEquals(MoneyCalculationTest.message, expected, actual);
